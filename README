@@ -1,0 +1,106 @@
+ 
+ INSTRUCTIONS FOR SETTING UP AND RUNNING THE API
+
+
+ # Installation
+
+1. Clone the repository to your local machine:
+
+git clone https://github.com/your-username/book-management-api.git
+
+2. Install the required dependencies :
+
+cd book-management-api
+
+npm install
+
+
+3. You can Create any File and note down these following things:-
+
+
+PORT = 3000
+MONGODB_URL = mongodb+srv://sid:jaiguruji@cluster0.dbzpsfq.mongodb.net/?retryWrites=true&w=majority
+
+
+4. Start the server:
+
+npx nodemon index.js
+The server will start running on the specified port (default is 3000).
+
+
+# API Endpoints
+
+
+1. Books
+
+GET /books/:authorId: Get books by author ID.
+GET /books: Get all books.
+POST /books: Create a new book.
+PUT /books/:id: Update a book by ID.
+DELETE /books/:id: Delete a book by ID.
+
+2. Authors
+
+
+POST /register: Create a new Author.
+POST/login: Creates an Author Login.
+
+ You can use tools like Postman or curl to interact with the API endpoints. Here are some of the  requests:
+
+# Usage
+
+1. Create an Author
+
+ You can Add value like these in your request Body :-
+
+ { "title" : "Mr", 
+  "name": "RNJHAaa", 
+  "phone": "9898588892", 
+  "email": "rnjhasahaaabh@gmail.com", 
+  "password": "ghatkoper591"
+  } 
+ POST localhost:3000/register
+
+
+ 2. Creating an Author Login 
+ 
+  Add the email and the password that you have added in your request body while creating the Author.
+  
+{
+    "email": "rnjhasahaaab@gmail.com", 
+  "password": "ghatkoper595"
+ }
+
+   POST localhost:3000/login
+
+
+  3. Create a new book
+
+ You can Add value like these in your request Body :-
+
+ '{"title":"Book Title","excerpt":"Book Excerpt","authorId":"authorId","ISBN":"1234567890","publishedAt":"2024-04-27"}' 
+ 
+ POST http://localhost:3000/books
+
+  4. Get books by author ID
+ 
+   GET http://localhost:3000/books/authorId
+ 
+  
+  5. Update a book
+
+  You can change the value of any one of the attributes  in your request Body :- 
+
+  '{"title":"Title of the book ","excerpt":"Book of Excerpt","ISBN":"1234567899","publishedAt":"2024-04-29"}' 
+ 
+ PUT http://localhost:3000/books/bookId
+
+  6. Delete a book
+
+ DELETE http://localhost:3000/books/bookId 
+
+ 7. Getting all the Books.
+
+ 
+   GET http://localhost:3000/books
+ 
